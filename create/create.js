@@ -9,10 +9,10 @@ form.addEventListener('submit', async (e) => {
     const bunnyData = new FormData(form);
 
     // get the name and family id from the form
-
     // use createBunny to create a bunny with this name and family id
-
+    createBunny({ name: bunnyData.get('bunny-name'), family_id: bunnyData.get('family-id') });
     form.reset();
+    location.replace('../');
 });
 
 window.addEventListener('load', async () => {
