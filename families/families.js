@@ -9,6 +9,7 @@ logoutButton.addEventListener('click', () => {
     logout();
 });
 
+// also fetches from db
 async function displayFamilies() {
     // fetch families from supabase
     const families = await getFamilies();

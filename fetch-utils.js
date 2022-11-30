@@ -11,8 +11,10 @@ export function getUser() {
 
 export async function getFamilies() {
     // fetch all families and their bunnies
-    const response = await client.from('loving_families').select('*, fuzzy_bunnies(*)');
-    //.eq('fuzzy_bunnies.user_id', client.auth.user().id);
+    const response = await client
+        .from('loving_families')
+        .select('*, fuzzy_bunnies(*)')
+        .eq('fuzzy_bunnies.user_id', client.auth.user().id);
     return checkError(response);
 }
 
@@ -23,6 +25,7 @@ export async function deleteBunny(id) {
 
 export async function createBunny(bunny) {
     // create a bunny using the bunny argument
+    //const response = await client.from('fuzzy_bunnies').insert({name: bunny.name, family_id:
     // return checkError(response);
 }
 
