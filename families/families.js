@@ -57,7 +57,6 @@ async function displayFamilies() {
 
 window.addEventListener('load', async () => {
     const families = await getFamilies();
-    console.log(families);
 
     displayFamilies(families);
 });
