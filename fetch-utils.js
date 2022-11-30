@@ -11,10 +11,8 @@ export function getUser() {
 
 export async function getFamilies() {
     // fetch all families and their bunnies
-    const response = await client
-        .from('fuzzy_bunnies')
-        .select('*, loving_families(*)')
-        .match({ user_id: client.auth.user().id });
+    const response = await client.from('loving_families').select('*, fuzzy_bunnies(*)');
+    //.eq('fuzzy_bunnies.user_id', client.auth.user().id);
     return checkError(response);
 }
 
